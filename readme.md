@@ -167,7 +167,7 @@ Tree representation of defined array, where values in brackets are array indices
 
 Clone the repository:
 ```shell
-git clone https://github.com/stuparmihailo/java-coding-interview.git
+git clone git@github.com:stuparmihailo/algo2prepare.git
 ```
 Open your IDE with this maven project and start with creation of packages and classes inside the project.
 
