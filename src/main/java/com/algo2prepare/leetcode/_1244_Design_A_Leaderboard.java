@@ -2,7 +2,7 @@ package com.algo2prepare.leetcode;
 
 import java.util.*;
 
-public class _1244_Design_A_Leaderboard {
+public class _1244_Design_A_Leaderboard implements Task {
 
     static class Leaderboard {
 
@@ -20,7 +20,7 @@ public class _1244_Design_A_Leaderboard {
                 int oldScore = playerIdScoreMap.get(playerId);
                 int newScore = oldScore + score;
 
-                // Remove the old score from the map
+                // Remove the old score from the map and then add new score
                 scoreCounterMap.put(oldScore, scoreCounterMap.get(oldScore) - 1);
                 scoreCounterMap.put(newScore, scoreCounterMap.getOrDefault(newScore, 0) + 1);
                 playerIdScoreMap.put(playerId, newScore);
@@ -63,6 +63,16 @@ public class _1244_Design_A_Leaderboard {
         }
     }
 
+    @Override
+    public boolean status() { return true; }
+
+    @Override
+    public String name() { return "Design A Leaderboard"; }
+
+    @Override
+    public int id() { return 1244; }
+
+
     public static void main(String[] args) {
         Leaderboard leaderboard = new Leaderboard();
         leaderboard.addScore(1,73);   // leaderboard = [[1,73]];
@@ -76,7 +86,6 @@ public class _1244_Design_A_Leaderboard {
         leaderboard.addScore(2,51);   // leaderboard = [[2,51],[3,39],[4,51],[5,4]];
         System.out.println(leaderboard.top(3));           // returns 141 = 51 + 51 + 39;
     }
-
 }
 
 
